@@ -6,14 +6,24 @@
 </head>
 <body>
     <form method='post'>
-        <label for='source_currency'>Recivers currency:</label>
-        <input type="text" name="source_currency" required>
+        <label for='source_currency'>Source currency:</label>
+        <input
+                type="text"
+                name="source_currency"
+                value="{{ source_currency }}"
+                placeholder="GBP"
+        >
 
-        <label for='target_currency'>Receiving currency:</label>
-        <input type="text" name="target_currency" required>
+        <label for='target_currency'>Target currency:</label>
+        <input
+                type="text"
+                name="target_currency"
+                value="{{ target_currency }}"
+                placeholder="USD"
+        >
 
-        <label for='source_amount'>Source amount:</label>
-        <input type="number" name="source_amount" required>
+        <label for='target_amount'>Target amount:</label>
+        <input type="number" name="target_amount" required>
 
         <button type="submit">Get quote</button>
     </form>
@@ -22,10 +32,8 @@
             <p>Error: {{ quote_data.error }}</p>
         {% else %}
             <h3>Quote details</h3>
-            <p>They get: {{ quote_data.targetCurrency }}</p>
-            <p>Wise Fees: {{ quote_data.wise_fees }}</p>
-            <p>Total Cost with Fees: {{ quote_data.total_cost }}</p>
             <p>You send: {{ quote_data.sourceAmount }}</p>
+            <p>They get: {{ quote_data.targetAmount }}</p>
             <p>Rate: {{ quote_data.rate }}</p>
         {% endif %}
     {% endif %}
