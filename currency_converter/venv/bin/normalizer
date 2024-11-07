@@ -1,4 +1,4 @@
-#!/Users/mohamedabdisalam/Developer/Projects/sarif/currency_converter/venv/bin/python3.12
+#!/Users/mohamedabdisalam/Developer/Projects/sarif/currency_converter/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

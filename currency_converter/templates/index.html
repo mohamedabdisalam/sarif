@@ -7,20 +7,16 @@
 <body>
     <form method='post'>
         <label for='source_currency'>Source currency:</label>
-        <input
-                type="text"
-                name="source_currency"
-                value="{{ source_currency }}"
-                placeholder="GBP"
-        >
+        <select id="source_currency" name="source_currency">
+                <option value="GBP" {% if source_currency == 'GBP' %}selected{% endif %}>GBP - British Pound</optionvalue></option>
+            <option value="USD" {% if source_currency == 'USD' %}selected{% endif %}>USD - US Dollar</option>
+        </select>
 
         <label for='target_currency'>Target currency:</label>
-        <input
-                type="text"
-                name="target_currency"
-                value="{{ target_currency }}"
-                placeholder="USD"
-        >
+        <select id="target_currency" name="target_currency">
+            <option value="USD" {% if target_currency == 'USD' %}selected{% endif %}>USD - US Dollar</option>
+                <option value="GBP" {% if target_currency == 'GBP' %}selected{% endif %}>GBP - British Pound</optionvalue></option>
+        </select>
 
         <label for='target_amount'>Target amount:</label>
         <input type="number" name="target_amount" required>
